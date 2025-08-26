@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tech Portfolio Design System - Professional & Modern */
+
+@layer base {
+  :root {
+    /* Core Background Colors */
+    --background: 24 25% 97%;
+    --foreground: 215 25% 15%;
+
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    --surface-glass: 0 0% 100% / 0.25;
+    --surface-elevated: 0 0% 100% / 0.35;
+
+    /* Brand Colors - Professional Tech Theme */
+    --primary: 215 45% 18%;
+    --primary-light: 215 35% 25%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Accent Colors */
+    --accent-blue: 200 85% 55%;
+    --accent-purple: 280 75% 65%;
+    --accent-cyan: 180 80% 60%;
+    --accent-gradient: linear-gradient(135deg, hsl(200 85% 55%) 0%, hsl(280 75% 65%) 100%);
+    
+    /* Secondary Colors */
+    --secondary: 210 30% 92%;
+    --secondary-dark: 215 20% 85%;
+    --secondary-foreground: 215 25% 15%;
+
+    /* Semantic Colors */
+    --muted: 210 25% 88%;
+    --muted-foreground: 215 15% 55%;
+
+    --destructive: 0 75% 58%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Interactive Elements */
+    --border: 215 15% 88%;
+    --input: 215 15% 92%;
+    --ring: 200 85% 55%;
+
+    /* Glass Effects */
+    --glass-bg: 0 0% 100% / 0.15;
+    --glass-border: 255 255 255 / 0.2;
+    --glass-shadow: 215 45% 18% / 0.1;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(24 25% 97%) 0%, hsl(210 30% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.25) 0%, hsl(0 0% 100% / 0.35) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(200 85% 55%) 0%, hsl(280 75% 65%) 50%, hsl(180 80% 60%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(215 45% 18% / 0.08);
+    --shadow-medium: 0 8px 32px hsl(215 45% 18% / 0.12);
+    --shadow-strong: 0 20px 60px hsl(215 45% 18% / 0.15);
+    --shadow-glow: 0 0 40px hsl(200 85% 55% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 8%;
+    --foreground: 210 40% 98%;
+    --card: 215 25% 10%;
+    --card-foreground: 210 40% 98%;
+    --primary: 200 85% 55%;
+    --primary-light: 200 75% 65%;
+    --primary-foreground: 215 25% 8%;
+    --secondary: 215 20% 18%;
+    --secondary-dark: 215 25% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 15% 65%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 200 85% 55%;
+    --glass-bg: 215 25% 8% / 0.25;
+    --glass-border: 255 255 255 / 0.1;
+    --glass-shadow: 0 0 0 / 0.3;
+    --gradient-hero: linear-gradient(135deg, hsl(215 25% 8%) 0%, hsl(215 20% 12%) 100%);
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.2);
+    --shadow-medium: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --shadow-strong: 0 20px 60px hsl(0 0% 0% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
