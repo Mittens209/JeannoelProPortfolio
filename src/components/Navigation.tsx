@@ -34,7 +34,7 @@ const Navigation = () => {
           {/* Logo */}
           <a 
             href="#home" 
-            className="text-2xl font-bold font-mono text-primary hover:text-accent-blue transition-colors"
+            className="text-2xl font-bold font-mono text-accent-yellow hover:text-primary transition-colors"
           >
             JDM
           </a>
@@ -45,10 +45,10 @@ const Navigation = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium relative group"
+                className="text-muted-foreground hover:text-accent-yellow transition-colors font-medium relative group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-solid-accent group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-yellow group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>
@@ -57,7 +57,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center">
             <Button 
               variant="outline" 
-              className="bg-card/50 border-border/50 hover:bg-accent-blue hover:text-white hover:border-accent-blue transition-all duration-300"
+              className="bg-card/50 border-accent-yellow/50 hover:bg-accent-yellow hover:text-black hover:border-accent-yellow transition-all duration-300"
               asChild
             >
               <a href="#contact">Let's Connect</a>
@@ -75,22 +75,22 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 p-6 bg-card/80 backdrop-blur-glass rounded-xl shadow-strong">
+          <div className="md:hidden mt-4 p-6 bg-secondary/30 backdrop-blur-glass rounded-xl shadow-strong border border-accent-yellow/20">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium py-2"
+                  className="text-muted-foreground hover:text-accent-yellow transition-colors font-medium py-2"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="flex items-center justify-end mt-4 pt-4">
+              <div className="flex items-center justify-end mt-4 pt-4 border-t border-accent-yellow/20">
                 <Button 
                   variant="outline" 
-                  className="bg-card/50 hover:bg-accent-blue hover:text-white shadow-soft hover:shadow-medium transition-all duration-300"
+                  className="bg-card/50 border-accent-yellow/50 hover:bg-accent-yellow hover:text-black shadow-soft hover:shadow-medium transition-all duration-300"
                   asChild
                 >
                   <a href="#contact" onClick={() => setIsOpen(false)}>Let's Connect</a>

@@ -61,8 +61,20 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-24 bg-transparent relative">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        {/* Section-specific electronic elements */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          {/* Horizontal circuit traces */}
+          <div className="absolute top-1/4 left-0 right-0 h-px bg-accent-yellow"></div>
+          <div className="absolute top-3/4 left-0 right-0 h-px bg-accent-yellow"></div>
+          
+          {/* Vertical circuit traces */}
+          <div className="absolute left-1/4 top-0 bottom-0 w-px bg-accent-yellow"></div>
+          <div className="absolute left-3/4 top-0 bottom-0 w-px bg-accent-yellow"></div>
+        </div>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Featured Projects

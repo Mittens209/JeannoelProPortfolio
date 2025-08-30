@@ -6,58 +6,61 @@
 
 @layer base {
   :root {
-    /* Core Background Colors - Cursor Inspired Theme */
-    --background: 240 10% 4%; /* Rich Black #09090B */
+    /* Core Background Colors - Gold & Green Theme */
+    --background: 0 0% 0%; /* Black #000000 */
     --foreground: 0 0% 100%; /* Pure White */
 
     /* Surface Colors */
-    --card: 240 10% 4% / 0.8; /* Rich Black with transparency */
+    --card: 0 0% 0% / 0.8; /* Black with transparency */
     --card-foreground: 0 0% 100%; /* Pure White */
-    --surface-glass: 240 5% 15% / 0.5; /* Subtle Glass Effect */
-    --surface-elevated: 240 5% 15% / 0.8;
+    --surface-glass: 160 75% 15% / 0.5; /* Dark Green Glass Effect */
+    --surface-elevated: 160 75% 15% / 0.8;
 
     /* Brand Colors */
-    --primary: 267 100% 70%; /* Vibrant Purple #9D5CFF */
-    --primary-light: 267 100% 85%; /* Lighter Purple */
-    --primary-foreground: 0 0% 100%; /* Pure White */
+    --primary: 48 70% 60%; /* Gold #D9B84B */
+    --primary-light: 48 70% 75%; /* Lighter Gold */
+    --primary-foreground: 0 0% 0%; /* Black text on gold */
     
     /* Accent Colors */
-    --accent-blue: 267 100% 70%; /* Vibrant Purple #9D5CFF */
+    --accent-blue: 160 85% 20%; /* Dark Green #075E3E */
+    --accent-cyan: 160 85% 35%; /* Medium Green #0F8F5F */
+    --accent-purple: 160 85% 25%; /* Green-teal #096D48 */
     --accent-light: 0 0% 100%; /* Pure White */
-    --accent-dark: 240 10% 4%; /* Rich Black #09090B */
+    --accent-dark: 0 0% 0%; /* Black */
+    --accent-yellow: 48 70% 60%; /* Gold #D9B84B */
     
     /* Secondary Colors */
-    --secondary: 240 5% 15%; /* Dark Gray */
-    --secondary-dark: 240 10% 4%; /* Rich Black */
+    --secondary: 160 85% 20%; /* Dark Green #075E3E */
+    --secondary-dark: 0 0% 0%; /* Black */
     --secondary-foreground: 0 0% 100%; /* Pure White */
 
     /* Semantic Colors */
-    --muted: 240 5% 65%; /* Soft Gray */
-    --muted-foreground: 240 5% 85%; /* Light Gray for text */
+    --muted: 160 20% 65%; /* Muted Green-Gray */
+    --muted-foreground: 48 30% 85%; /* Light Gold for text */
 
     --destructive: 0 75% 58%;
     --destructive-foreground: 0 0% 100%;
 
     /* Interactive Elements */
-    --border: 240 5% 65% / 0.2; /* Subtle borders */
-    --input: 240 5% 15%; /* Dark input background */
-    --ring: 267 100% 70%; /* Purple focus rings */
+    --border: 48 30% 60% / 0.3; /* Gold borders */
+    --input: 160 85% 10%; /* Dark Green input background */
+    --ring: 48 70% 60%; /* Gold focus rings */
 
     /* Glass Effects */
-    --glass-bg: 267 100% 70% / 0.1; /* Purple tint */
-    --glass-shadow: 267 100% 70% / 0.15;
+    --glass-bg: 48 70% 60% / 0.1; /* Gold tint */
+    --glass-shadow: 48 70% 60% / 0.15;
     
     /* Background Effects */
-    --panel-bg: 240 10% 4%; /* Rich Black */
-    --card-glass: 240 5% 15% / 0.8;
+    --panel-bg: 0 0% 0%; /* Black */
+    --card-glass: 160 85% 15% / 0.8; /* Dark Green with transparency */
     --backdrop-blur: blur(16px);
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px -6px hsl(267 100% 70% / 0.25);
-    --shadow-medium: 0 8px 30px -8px hsl(267 100% 70% / 0.3);
-    --shadow-strong: 0 12px 40px -10px hsl(267 100% 70% / 0.35);
-    --shadow-glass: 0 8px 32px -6px hsl(267 100% 70% / 0.2);
-    --shadow-glow: 0 0 40px hsl(267 100% 70% / 0.3);
+    --shadow-soft: 0 4px 20px -6px hsl(48 70% 60% / 0.25);
+    --shadow-medium: 0 8px 30px -8px hsl(48 70% 60% / 0.3);
+    --shadow-strong: 0 12px 40px -10px hsl(48 70% 60% / 0.35);
+    --shadow-glass: 0 8px 32px -6px hsl(48 70% 60% / 0.2);
+    --shadow-glow: 0 0 40px hsl(48 70% 60% / 0.3);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,76 +110,179 @@
     100% { transform: translateY(100%); }
   }
 
+  /* Circuit trace pattern animation */
+  @keyframes circuit-trace {
+    0%, 100% { opacity: 0.05; }
+    50% { opacity: 0.2; }
+  }
+  
+  /* Power surge animation */
+  @keyframes power-surge {
+    0% { opacity: 0; }
+    10% { opacity: 0.8; }
+    30% { opacity: 0.2; }
+    40% { opacity: 0.6; }
+    60% { opacity: 0.3; }
+    80% { opacity: 0.7; }
+    100% { opacity: 0; }
+  }
+  
+  /* Digital noise animation */
+  @keyframes digital-noise {
+    0%, 100% { 
+      background-position: 0% 0%;
+      opacity: 0.03;
+    }
+    25% { 
+      background-position: 100% 0%;
+      opacity: 0.05;
+    }
+    50% { 
+      background-position: 100% 100%;
+      opacity: 0.07;
+    }
+    75% { 
+      background-position: 0% 100%;
+      opacity: 0.04;
+    }
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(0 0% 0%); /* Black background */
+    color: hsl(0 0% 100%); /* White text */
     background-image: 
-      /* Data Streams - Vertical flowing lines */
+      /* Enhanced Data Streams - Vertical flowing lines */
       repeating-linear-gradient(0deg, 
-        rgba(157, 92, 255, 0.02) 0px,
-        rgba(157, 92, 255, 0.02) 1px,
+        rgba(217, 184, 75, 0.07) 0px,
+        rgba(217, 184, 75, 0.07) 1px,
         transparent 1px,
         transparent 30px
       ),
-      /* Binary Pattern */
+      /* Binary Pattern - More visible */
       linear-gradient(90deg,
-        rgba(157, 92, 255, 0.01) 25%,
+        rgba(7, 94, 62, 0.05) 25%,
         transparent 25%
       ),
-      /* Circuit Grid */
-      linear-gradient(90deg, rgba(157, 92, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(rgba(157, 92, 255, 0.02) 1px, transparent 1px),
-      /* Circuit Nodes */
-      radial-gradient(circle, rgba(157, 92, 255, 0.03) 1px, transparent 1px),
-      /* Data Pathways */
-      linear-gradient(45deg, rgba(157, 92, 255, 0.01) 1px, transparent 2px),
-      linear-gradient(-45deg, rgba(157, 92, 255, 0.01) 1px, transparent 2px);
+      /* Enhanced Circuit Grid */
+      linear-gradient(90deg, rgba(217, 184, 75, 0.05) 1px, transparent 1px),
+      linear-gradient(rgba(217, 184, 75, 0.05) 1px, transparent 1px),
+      /* Circuit Nodes - More prominent */
+      radial-gradient(circle, rgba(217, 184, 75, 0.08) 1px, transparent 1px),
+      /* Data Pathways - Clearer */
+      linear-gradient(45deg, rgba(15, 143, 95, 0.04) 1px, transparent 2px),
+      linear-gradient(-45deg, rgba(15, 143, 95, 0.04) 1px, transparent 2px);
     
     background-size: 
       100% 30px,  /* Data Streams */
       4px 4px,    /* Binary Pattern */
       50px 50px,  /* Circuit Grid */
       50px 50px,  /* Circuit Grid */
-      50px 50px,  /* Circuit Nodes */
-      100px 100px,/* Data Pathways */
-      100px 100px;
+      25px 25px,  /* Circuit Nodes - Smaller & denser */
+      80px 80px,  /* Data Pathways */
+      80px 80px;
     
     animation: dataStream 20s linear infinite;
   }
 
-  /* Binary code layer */
+  /* Binary code layer - Enhanced */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
     background-image: 
+      /* Digital code pattern */
       repeating-linear-gradient(90deg,
-        rgba(157, 92, 255, 0.03) 0px,
-        rgba(157, 92, 255, 0.03) 1px,
+        rgba(217, 184, 75, 0.08) 0px,
+        rgba(217, 184, 75, 0.08) 1px,
         transparent 1px,
         transparent 30px
-      );
-    background-size: 30px 30px;
-    animation: binaryFade 4s ease-in-out infinite;
+      ),
+      /* Digital noise pattern */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' fill='rgba(217, 184, 75, 0.07)' font-family='monospace' font-size='10'%3E10%3C/text%3E%3Ctext x='50' y='40' fill='rgba(217, 184, 75, 0.07)' font-family='monospace' font-size='10'%3E01%3C/text%3E%3Ctext x='20' y='60' fill='rgba(217, 184, 75, 0.07)' font-family='monospace' font-size='10'%3E01%3C/text%3E%3Ctext x='70' y='80' fill='rgba(217, 184, 75, 0.07)' font-family='monospace' font-size='10'%3E10%3C/text%3E%3C/svg%3E");
+    background-size: 30px 30px, 100px 100px;
+    animation: binaryFade 4s ease-in-out infinite, digital-noise 30s infinite linear;
     pointer-events: none;
+    z-index: 0;
   }
 
-  /* Circuit nodes and data points */
+  /* Circuit nodes and data points - Enhanced */
   body::after {
     content: '';
     position: fixed;
     inset: 0;
     background: 
+      /* Central vignette */
       radial-gradient(circle at 50% 50%, transparent 0%, var(--background) 100%),
+      /* Circuit node pattern */
       repeating-radial-gradient(
         circle at 50px 50px,
-        rgba(157, 92, 255, 0.1) 2px,
+        rgba(217, 184, 75, 0.15) 2px,
         transparent 3px,
         transparent 50px
-      );
-    background-size: 100% 100%, 100px 100px;
-    animation: circuit-pulse 4s ease-in-out infinite;
+      ),
+      /* PCB trace pattern */
+      linear-gradient(to right, 
+        transparent 47%,
+        rgba(15, 143, 95, 0.06) 47%,
+        rgba(15, 143, 95, 0.06) 53%,
+        transparent 53%
+      ),
+      linear-gradient(to bottom, 
+        transparent 47%,
+        rgba(15, 143, 95, 0.06) 47%,
+        rgba(15, 143, 95, 0.06) 53%,
+        transparent 53%
+      ),
+      /* Accent corner elements */
+      radial-gradient(circle at 10% 10%, rgba(217, 184, 75, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 90% 10%, rgba(217, 184, 75, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 10% 90%, rgba(217, 184, 75, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 90% 90%, rgba(217, 184, 75, 0.1) 0%, transparent 20%);
+    background-size: 100% 100%, 100px 100px, 150px 150px, 150px 150px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    animation: circuit-pulse 4s ease-in-out infinite, circuit-trace 8s ease-in-out infinite;
     pointer-events: none;
     z-index: 1;
+  }
+  
+  /* Additional electronic elements */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      /* Power surge lines - horizontal */
+      linear-gradient(90deg,
+        transparent 20%,
+        rgba(217, 184, 75, 0) 20%,
+        rgba(217, 184, 75, 0) 21%,
+        transparent 21%
+      ),
+      /* Power surge lines - vertical */
+      linear-gradient(0deg,
+        transparent 40%,
+        rgba(217, 184, 75, 0) 40%,
+        rgba(217, 184, 75, 0) 41%,
+        transparent 41%
+      ),
+      /* Power surge lines - horizontal */
+      linear-gradient(90deg,
+        transparent 80%,
+        rgba(217, 184, 75, 0) 80%,
+        rgba(217, 184, 75, 0) 81%,
+        transparent 81%
+      ),
+      /* Power surge lines - vertical */
+      linear-gradient(0deg,
+        transparent 60%,
+        rgba(217, 184, 75, 0) 60%,
+        rgba(217, 184, 75, 0) 61%,
+        transparent 61%
+      );
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    animation: power-surge 15s ease-in-out infinite;
   }
 
   /* Add matrix-like falling characters effect */
@@ -194,12 +300,121 @@
   .matrix-rain::before {
     content: '10';
     position: absolute;
-    color: rgba(157, 92, 255, 0.05);
+    color: rgba(15, 143, 95, 0.06);
     font-family: monospace;
     font-size: 12px;
     line-height: 1;
     white-space: nowrap;
     transform-origin: 0 0;
     animation: matrixRain 20s linear infinite;
+  }
+  
+  /* Shimmer animation for glass elements */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Electric spark animations */
+  @keyframes spark-horizontal {
+    0%, 100% { 
+      width: 0;
+      opacity: 0;
+      box-shadow: 0 0 0 rgba(217, 184, 75, 0);
+    }
+    5% { 
+      width: 0;
+      opacity: 0.8;
+      box-shadow: 0 0 5px rgba(217, 184, 75, 0.3);
+    }
+    50% { 
+      width: 100%;
+      opacity: 0.8;
+      box-shadow: 0 0 10px rgba(217, 184, 75, 0.5);
+    }
+    95% {
+      width: 100%;
+      opacity: 0.8;
+      box-shadow: 0 0 5px rgba(217, 184, 75, 0.3);
+    }
+    100% { 
+      width: 100%;
+      opacity: 0;
+      box-shadow: 0 0 0 rgba(217, 184, 75, 0);
+    }
+  }
+  
+  @keyframes spark-vertical {
+    0%, 100% { 
+      height: 0;
+      opacity: 0;
+      box-shadow: 0 0 0 rgba(217, 184, 75, 0);
+    }
+    5% { 
+      height: 0;
+      opacity: 0.8;
+      box-shadow: 0 0 5px rgba(217, 184, 75, 0.3);
+    }
+    50% { 
+      height: 100%;
+      opacity: 0.8;
+      box-shadow: 0 0 10px rgba(217, 184, 75, 0.5);
+    }
+    95% {
+      height: 100%;
+      opacity: 0.8;
+      box-shadow: 0 0 5px rgba(217, 184, 75, 0.3);
+    }
+    100% { 
+      height: 100%;
+      opacity: 0;
+      box-shadow: 0 0 0 rgba(217, 184, 75, 0);
+    }
+  }
+  
+  @keyframes spark-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes spark-node {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+      box-shadow: 0 0 0 rgba(217, 184, 75, 0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 0 15px rgba(217, 184, 75, 0.7);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+      box-shadow: 0 0 0 rgba(217, 184, 75, 0);
+    }
+  }
+  
+  /* Data flow animation for electronic elements */
+  @keyframes data-flow {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 }

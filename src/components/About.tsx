@@ -31,10 +31,25 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-24 bg-transparent relative">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        {/* Section-specific electronic elements */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          {/* Grid pattern */}
+          <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-1">
+            {Array(36).fill(0).map((_, i) => (
+              <div key={i} className="border border-accent-yellow/10 rounded-sm"></div>
+            ))}
+          </div>
+          
+          {/* Circuit nodes */}
+          <div className="absolute top-1/3 left-1/3 w-3 h-3 rounded-full bg-accent-yellow/20 animate-pulse"></div>
+          <div className="absolute top-2/3 left-2/3 w-3 h-3 rounded-full bg-accent-yellow/20 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-accent-yellow mb-6">
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -111,23 +126,23 @@ const About = () => {
             {stats.map((stat, index) => (
               <Card
                 key={stat.label}
-                className="bg-[#00243D] p-6 rounded-2xl shadow-medium"
+                className="bg-card-glass/60 backdrop-blur-glass p-6 rounded-2xl shadow-medium border border-accent-yellow/20 hover:border-accent-yellow/30 transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-medium">
+                  <div className="w-12 h-12 bg-secondary/20 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-medium">
                     <stat.icon className="w-7 h-7 text-primary" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">{stat.value}</div>
-                    <div className="text-sm text-white/80">{stat.label}</div>
+                    <div className="text-2xl font-bold text-primary">{stat.value}</div>
+                    <div className="text-sm text-muted-foreground">{stat.label}</div>
                   </div>
                 </div>
               </Card>
             ))}
 
             {/* Location Card */}
-            <Card className="bg-[#00243D] p-6 text-white/90 shadow-medium rounded-2xl">
+            <Card className="bg-card-glass/60 backdrop-blur-glass p-6 text-primary shadow-medium rounded-2xl border border-accent-yellow/20 hover:border-accent-yellow/30 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <MapPin size={24} className="text-primary" />
                 <h4 className="text-xl font-semibold">Location</h4>
@@ -136,10 +151,10 @@ const About = () => {
                 <p className="text-base">Vintar, Ilocos Norte</p>
                 <p className="text-base">Philippines 2915</p>
               </div>
-              <div className="pt-4 border-t border-white/10">
+              <div className="pt-4 border-t border-accent-yellow/10">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse" />
-                  <p className="text-sm text-white/80">Available for remote work and local opportunities</p>
+                  <div className="w-2 h-2 bg-accent-yellow rounded-full animate-pulse" />
+                  <p className="text-sm text-muted-foreground">Available for remote work and local opportunities</p>
                 </div>
               </div>
             </Card>

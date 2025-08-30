@@ -64,7 +64,7 @@ const TechStack = () => {
     <section id="tech-stack" className="py-24 bg-gradient-hero">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-accent-yellow mb-6">
             Technology Stack
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -80,9 +80,9 @@ const TechStack = () => {
               className="group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative bg-card/30 backdrop-blur-glass rounded-2xl p-6 hover:bg-card/50 hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
+              <div className="relative bg-secondary/20 backdrop-blur-glass rounded-2xl p-6 hover:bg-secondary/30 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 border border-accent-yellow/10 hover:border-accent-yellow/30">
                 {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-20 rounded-2xl transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-yellow/5 to-secondary/20 opacity-0 group-hover:opacity-30 rounded-2xl transition-opacity duration-500" />
                 
                 <div className="relative z-10 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 relative">
@@ -93,9 +93,9 @@ const TechStack = () => {
                     />
                   </div>
                   
-                  <h3 className="font-semibold text-primary mb-1">{tech.name}</h3>
+                  <h3 className="font-semibold text-accent-yellow mb-1">{tech.name}</h3>
                   <p className="text-sm text-muted-foreground mb-2">{tech.description}</p>
-                  <span className="inline-block px-3 py-1 bg-accent-blue/20 text-accent-blue rounded-full text-xs font-medium">
+                  <span className="inline-block px-3 py-1 bg-secondary/40 text-accent-yellow rounded-full text-xs font-medium border border-accent-yellow/20">
                     {tech.category}
                   </span>
                 </div>
@@ -109,17 +109,17 @@ const TechStack = () => {
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
-              className="bg-card/30 backdrop-blur-glass rounded-2xl p-8 hover:bg-card/50 transition-all duration-300 hover:shadow-medium"
+              className="bg-secondary/20 backdrop-blur-glass rounded-2xl p-8 hover:bg-secondary/30 transition-all duration-300 hover:shadow-medium border border-accent-yellow/10 hover:border-accent-yellow/30"
               style={{ animationDelay: `${categoryIndex * 200}ms` }}
             >
-              <h3 className="text-xl font-semibold text-primary mb-6 text-center">
+              <h3 className="text-xl font-semibold text-accent-yellow mb-6 text-center">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-3 justify-center">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 bg-secondary/50 text-secondary-foreground rounded-xl text-sm font-medium hover:bg-accent-blue hover:text-white transition-all duration-300 cursor-default"
+                    className="px-4 py-2 bg-secondary/40 text-muted-foreground rounded-xl text-sm font-medium hover:bg-accent-yellow hover:text-black transition-all duration-300 cursor-default border border-accent-yellow/20"
                   >
                     {skill}
                   </span>
