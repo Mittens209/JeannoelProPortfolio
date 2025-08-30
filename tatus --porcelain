@@ -1,5 +1,0 @@
-[33m4f34edc3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdarkmode[m[33m, [m[1;31morigin/darkmode[m[33m)[m Configured dark mode and neccessary adjustments
-[33m5ab053ad[m feat: Add dark mode toggle with automatic theme detection
-[33meed5c20e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m feat: Add Supabase integration for contact form submissions
-[33m1b1de851[m fix: Add GitHub Pages routing support and meta tags for better browser compatibility
-[33mb3c652bd[m added a php router file in gitignore
