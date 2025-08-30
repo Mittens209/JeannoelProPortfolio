@@ -13,6 +13,8 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 
+.github/
+
 # Build outputs
 dist/
 dist-ssr/
