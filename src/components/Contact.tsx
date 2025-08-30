@@ -7,7 +7,6 @@ import { Card } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { supabase, isSupabaseAvailable } from '@/lib/supabase';
 import type { ContactFormData } from '@/types/contact';
-import SupabaseTest from './SupabaseTest';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -101,11 +100,6 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {/* Supabase Test Component - Remove this after testing */}
-          <div className="lg:col-span-3 mb-8">
-            <SupabaseTest />
-          </div>
-          
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6">
             <div className="mb-8">
