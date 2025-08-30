@@ -11,10 +11,11 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <div className="matrix-rain" />
         <BrowserRouter basename="/JeannoelProPortfolio">
           <Routes>
             <Route path="/" element={<Index />} />

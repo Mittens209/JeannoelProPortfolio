@@ -80,7 +80,7 @@ const TechStack = () => {
               className="group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative bg-card/30 backdrop-blur-glass border border-border/20 rounded-2xl p-6 hover:bg-card/50 hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
+              <div className="relative bg-card/30 backdrop-blur-glass rounded-2xl p-6 hover:bg-card/50 hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-20 rounded-2xl transition-opacity duration-500" />
                 
@@ -109,7 +109,7 @@ const TechStack = () => {
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
-              className="bg-card/30 backdrop-blur-glass border border-border/20 rounded-2xl p-8 hover:bg-card/50 transition-all duration-300 hover:shadow-medium"
+              className="bg-card/30 backdrop-blur-glass rounded-2xl p-8 hover:bg-card/50 transition-all duration-300 hover:shadow-medium"
               style={{ animationDelay: `${categoryIndex * 200}ms` }}
             >
               <h3 className="text-xl font-semibold text-primary mb-6 text-center">

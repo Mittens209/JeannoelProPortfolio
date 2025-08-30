@@ -46,18 +46,13 @@ const About = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Bio */}
-            <Card className="bg-card/30 backdrop-blur-glass border-border/20 p-8">
+            <Card className="bg-card/30 backdrop-blur-glass shadow-medium hover:shadow-strong transition-all duration-300 p-8">
               <h3 className="text-2xl font-semibold text-primary mb-6">My Story</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   I am a dedicated Electronics Engineer with a passion for innovative technology solutions. 
                   My expertise spans from IoT systems and data analytics to ICT infrastructure development. 
                   I enjoy solving complex technical challenges and creating systems that make a real-world impact.
-                </p>
-                <p>
-                  Currently working as part of the Government Internship Program at the Municipal Engineering 
-                  Office, where I assist in designing and implementing local ICT infrastructure projects, 
-                  develop digital systems, and provide technical support for various community initiatives.
                 </p>
                 <p>
                   My journey combines strong technical foundations with practical experience, always focusing 
@@ -67,15 +62,13 @@ const About = () => {
             </Card>
 
             {/* Education */}
-            <Card className="bg-card/30 backdrop-blur-glass border-border/20 p-8">
+            <Card className="bg-card/30 backdrop-blur-glass shadow-medium hover:shadow-strong transition-all duration-300 p-8">
               <h3 className="text-2xl font-semibold text-primary mb-6">Education</h3>
               <div className="space-y-6">
                 {education.map((edu) => (
-                  <div key={edu.degree} className="flex items-start gap-4 pb-6 border-b border-border/20 last:border-0 last:pb-0">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                      edu.type === 'University' ? 'bg-accent-blue/20 text-accent-blue' : 'bg-accent-purple/20 text-accent-purple'
-                    }`}>
-                      <GraduationCap size={20} />
+                  <div key={edu.degree} className="flex items-start gap-4 pb-6 last:pb-0">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-primary/10 backdrop-blur-sm shadow-medium">
+                      <GraduationCap size={24} className="text-primary" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-primary">{edu.degree}</h4>
@@ -88,13 +81,23 @@ const About = () => {
             </Card>
 
             {/* Certifications */}
-            <Card className="bg-card/30 backdrop-blur-glass border-border/20 p-8">
+            <Card className="bg-card/30 backdrop-blur-glass shadow-medium hover:shadow-strong transition-all duration-300 p-8">
               <h3 className="text-2xl font-semibold text-primary mb-6">Certifications</h3>
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent-cyan/20 flex items-center justify-center mt-0.5">
-                      <Award size={12} className="text-accent-cyan" />
+                    <div className="w-6 h-6 rounded-full bg-primary/10 backdrop-blur-sm flex items-center justify-center mt-0.5 shadow-medium">
+                      {cert.includes('DataCamp') ? (
+                        <svg 
+                          viewBox="0 0 32 32" 
+                          className="w-3.5 h-3.5 text-primary"
+                          fill="currentColor"
+                        >
+                          <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm-3.9 21.2c-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.4l-4.6-4.6c-.3-.3-.4-.7-.4-1.1 0-.4.1-.8.4-1.1l5.7-5.7c.3-.3.7-.4 1.1-.4.4 0 .8.1 1.1.4l1.5 1.5c.6.6.6 1.5 0 2.1l-3.7 3.7 2.2 2.2c.3.3.4.7.4 1.1 0 .4-.1.8-.4 1.1zm11.6-5.7c0 .4-.1.8-.4 1.1l-5.7 5.7c-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.4l-1.5-1.5c-.6-.6-.6-1.5 0-2.1l3.7-3.7-2.2-2.2c-.6-.6-.6-1.5 0-2.1l1.5-1.5c.3-.3.7-.4 1.1-.4.4 0 .8.1 1.1.4l4.6 4.6c.3.3.4.7.4 1.1z" />
+                        </svg>
+                      ) : (
+                        <Award size={14} className="text-primary" />
+                      )}
                     </div>
                     <p className="text-muted-foreground">{cert}</p>
                   </div>
@@ -108,31 +111,36 @@ const About = () => {
             {stats.map((stat, index) => (
               <Card
                 key={stat.label}
-                className="bg-card/30 backdrop-blur-glass border-border/20 p-6 hover:bg-card/50 hover:shadow-medium transition-all duration-300"
+                className="bg-[#00243D] p-6 rounded-2xl shadow-medium"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center">
-                    <stat.icon className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-medium">
+                    <stat.icon className="w-7 h-7 text-primary" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="text-2xl font-bold text-white">{stat.value}</div>
+                    <div className="text-sm text-white/80">{stat.label}</div>
                   </div>
                 </div>
               </Card>
             ))}
 
             {/* Location Card */}
-            <Card className="bg-gradient-accent p-6 text-white">
-              <div className="flex items-center gap-3 mb-3">
-                <MapPin size={20} />
-                <h4 className="font-semibold">Location</h4>
+            <Card className="bg-[#00243D] p-6 text-white/90 shadow-medium rounded-2xl">
+              <div className="flex items-center gap-4 mb-6">
+                <MapPin size={24} className="text-primary" />
+                <h4 className="text-xl font-semibold">Location</h4>
               </div>
-              <p className="text-sm opacity-90">Vintar, Ilocos Norte</p>
-              <p className="text-sm opacity-90">Philippines 2915</p>
-              <div className="mt-4 pt-4 border-t border-white/20">
-                <p className="text-xs opacity-75">Available for remote work and local opportunities</p>
+              <div className="space-y-1 mb-6">
+                <p className="text-base">Vintar, Ilocos Norte</p>
+                <p className="text-base">Philippines 2915</p>
+              </div>
+              <div className="pt-4 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-accent-blue rounded-full animate-pulse" />
+                  <p className="text-sm text-white/80">Available for remote work and local opportunities</p>
+                </div>
               </div>
             </Card>
           </div>

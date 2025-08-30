@@ -6,59 +6,58 @@
 
 @layer base {
   :root {
-    /* Core Background Colors */
-    --background: 24 25% 97%;
-    --foreground: 215 25% 15%;
+    /* Core Background Colors - Cursor Inspired Theme */
+    --background: 240 10% 4%; /* Rich Black #09090B */
+    --foreground: 0 0% 100%; /* Pure White */
 
     /* Surface Colors */
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
-    --surface-glass: 0 0% 100% / 0.25;
-    --surface-elevated: 0 0% 100% / 0.35;
+    --card: 240 10% 4% / 0.8; /* Rich Black with transparency */
+    --card-foreground: 0 0% 100%; /* Pure White */
+    --surface-glass: 240 5% 15% / 0.5; /* Subtle Glass Effect */
+    --surface-elevated: 240 5% 15% / 0.8;
 
-    /* Brand Colors - Professional Tech Theme */
-    --primary: 215 45% 18%;
-    --primary-light: 215 35% 25%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand Colors */
+    --primary: 267 100% 70%; /* Vibrant Purple #9D5CFF */
+    --primary-light: 267 100% 85%; /* Lighter Purple */
+    --primary-foreground: 0 0% 100%; /* Pure White */
     
     /* Accent Colors */
-    --accent-blue: 200 85% 55%;
-    --accent-purple: 280 75% 65%;
-    --accent-cyan: 180 80% 60%;
-    --accent-gradient: linear-gradient(135deg, hsl(200 85% 55%) 0%, hsl(280 75% 65%) 100%);
+    --accent-blue: 267 100% 70%; /* Vibrant Purple #9D5CFF */
+    --accent-light: 0 0% 100%; /* Pure White */
+    --accent-dark: 240 10% 4%; /* Rich Black #09090B */
     
     /* Secondary Colors */
-    --secondary: 210 30% 92%;
-    --secondary-dark: 215 20% 85%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 240 5% 15%; /* Dark Gray */
+    --secondary-dark: 240 10% 4%; /* Rich Black */
+    --secondary-foreground: 0 0% 100%; /* Pure White */
 
     /* Semantic Colors */
-    --muted: 210 25% 88%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 240 5% 65%; /* Soft Gray */
+    --muted-foreground: 240 5% 85%; /* Light Gray for text */
 
     --destructive: 0 75% 58%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Interactive Elements */
-    --border: 215 15% 88%;
-    --input: 215 15% 92%;
-    --ring: 200 85% 55%;
+    --border: 240 5% 65% / 0.2; /* Subtle borders */
+    --input: 240 5% 15%; /* Dark input background */
+    --ring: 267 100% 70%; /* Purple focus rings */
 
     /* Glass Effects */
-    --glass-bg: 0 0% 100% / 0.15;
-    --glass-border: 255 255 255 / 0.2;
-    --glass-shadow: 215 45% 18% / 0.1;
+    --glass-bg: 267 100% 70% / 0.1; /* Purple tint */
+    --glass-shadow: 267 100% 70% / 0.15;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(24 25% 97%) 0%, hsl(210 30% 95%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.25) 0%, hsl(0 0% 100% / 0.35) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(200 85% 55%) 0%, hsl(280 75% 65%) 50%, hsl(180 80% 60%) 100%);
+    /* Background Effects */
+    --panel-bg: 240 10% 4%; /* Rich Black */
+    --card-glass: 240 5% 15% / 0.8;
+    --backdrop-blur: blur(16px);
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(215 45% 18% / 0.08);
-    --shadow-medium: 0 8px 32px hsl(215 45% 18% / 0.12);
-    --shadow-strong: 0 20px 60px hsl(215 45% 18% / 0.15);
-    --shadow-glow: 0 0 40px hsl(200 85% 55% / 0.3);
+    --shadow-soft: 0 4px 20px -6px hsl(267 100% 70% / 0.25);
+    --shadow-medium: 0 8px 30px -8px hsl(267 100% 70% / 0.3);
+    --shadow-strong: 0 12px 40px -10px hsl(267 100% 70% / 0.35);
+    --shadow-glass: 0 8px 32px -6px hsl(267 100% 70% / 0.2);
+    --shadow-glow: 0 0 40px hsl(267 100% 70% / 0.3);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -80,48 +79,127 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 215 25% 8%;
-    --foreground: 210 40% 98%;
-    --card: 215 25% 10%;
-    --card-foreground: 210 40% 98%;
-    --primary: 200 85% 55%;
-    --primary-light: 200 75% 65%;
-    --primary-foreground: 215 25% 8%;
-    --secondary: 215 20% 18%;
-    --secondary-dark: 215 25% 12%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 215 20% 18%;
-    --muted-foreground: 215 15% 65%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 215 20% 18%;
-    --input: 215 20% 18%;
-    --ring: 200 85% 55%;
-    --glass-bg: 215 25% 8% / 0.25;
-    --glass-border: 255 255 255 / 0.1;
-    --glass-shadow: 0 0 0 / 0.3;
-    --gradient-hero: linear-gradient(135deg, hsl(215 25% 8%) 0%, hsl(215 20% 12%) 100%);
-    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.2);
-    --shadow-medium: 0 8px 32px hsl(0 0% 0% / 0.3);
-    --shadow-strong: 0 20px 60px hsl(0 0% 0% / 0.4);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  /* Data Stream Animation */
+  @keyframes dataStream {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 1000px; }
+  }
+
+  /* Binary Fade Animation */
+  @keyframes binaryFade {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+  }
+
+  /* Circuit nodes animation */
+  @keyframes circuit-pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Matrix rain effect */
+  @keyframes matrixRain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
   }
 
   body {
     @apply bg-background text-foreground;
+    background-image: 
+      /* Data Streams - Vertical flowing lines */
+      repeating-linear-gradient(0deg, 
+        rgba(157, 92, 255, 0.02) 0px,
+        rgba(157, 92, 255, 0.02) 1px,
+        transparent 1px,
+        transparent 30px
+      ),
+      /* Binary Pattern */
+      linear-gradient(90deg,
+        rgba(157, 92, 255, 0.01) 25%,
+        transparent 25%
+      ),
+      /* Circuit Grid */
+      linear-gradient(90deg, rgba(157, 92, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(rgba(157, 92, 255, 0.02) 1px, transparent 1px),
+      /* Circuit Nodes */
+      radial-gradient(circle, rgba(157, 92, 255, 0.03) 1px, transparent 1px),
+      /* Data Pathways */
+      linear-gradient(45deg, rgba(157, 92, 255, 0.01) 1px, transparent 2px),
+      linear-gradient(-45deg, rgba(157, 92, 255, 0.01) 1px, transparent 2px);
+    
+    background-size: 
+      100% 30px,  /* Data Streams */
+      4px 4px,    /* Binary Pattern */
+      50px 50px,  /* Circuit Grid */
+      50px 50px,  /* Circuit Grid */
+      50px 50px,  /* Circuit Nodes */
+      100px 100px,/* Data Pathways */
+      100px 100px;
+    
+    animation: dataStream 20s linear infinite;
+  }
+
+  /* Binary code layer */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      repeating-linear-gradient(90deg,
+        rgba(157, 92, 255, 0.03) 0px,
+        rgba(157, 92, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 30px
+      );
+    background-size: 30px 30px;
+    animation: binaryFade 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Circuit nodes and data points */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 50% 50%, transparent 0%, var(--background) 100%),
+      repeating-radial-gradient(
+        circle at 50px 50px,
+        rgba(157, 92, 255, 0.1) 2px,
+        transparent 3px,
+        transparent 50px
+      );
+    background-size: 100% 100%, 100px 100px;
+    animation: circuit-pulse 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Add matrix-like falling characters effect */
+  .matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .matrix-rain::before {
+    content: '10';
+    position: absolute;
+    color: rgba(157, 92, 255, 0.05);
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+    transform-origin: 0 0;
+    animation: matrixRain 20s linear infinite;
   }
 }

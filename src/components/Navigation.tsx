@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/theme-toggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +26,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled 
-        ? 'backdrop-blur-glass bg-card/30 border-b border-border/20 shadow-soft' 
+        ? 'backdrop-blur-glass bg-card/30 shadow-medium' 
         : 'backdrop-blur-glass bg-card/10'
     }`}>
       <div className="container mx-auto px-6 py-4">
@@ -49,14 +48,13 @@ const Navigation = () => {
                 className="text-muted-foreground hover:text-primary transition-colors font-medium relative group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-accent group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-solid-accent group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>
 
           {/* CTA Button and Theme Toggle */}
-          <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
+          <div className="hidden md:flex items-center">
             <Button 
               variant="outline" 
               className="bg-card/50 border-border/50 hover:bg-accent-blue hover:text-white hover:border-accent-blue transition-all duration-300"
@@ -77,7 +75,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 p-6 bg-card/80 backdrop-blur-glass rounded-xl border border-border/20 shadow-medium">
+          <div className="md:hidden mt-4 p-6 bg-card/80 backdrop-blur-glass rounded-xl shadow-strong">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
@@ -89,11 +87,10 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/20">
-                <ThemeToggle />
+              <div className="flex items-center justify-end mt-4 pt-4">
                 <Button 
                   variant="outline" 
-                  className="bg-card/50 border-border/50 hover:bg-accent-blue hover:text-white hover:border-accent-blue transition-all duration-300"
+                  className="bg-card/50 hover:bg-accent-blue hover:text-white shadow-soft hover:shadow-medium transition-all duration-300"
                   asChild
                 >
                   <a href="#contact" onClick={() => setIsOpen(false)}>Let's Connect</a>

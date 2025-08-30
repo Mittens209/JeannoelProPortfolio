@@ -18,7 +18,7 @@ const Contact = () => {
       label: 'Email',
       value: 'junnellemiguel09@gmail.com',
       href: 'mailto:junnellemiguel09@gmail.com',
-      gradient: 'from-accent-blue to-accent-cyan'
+
     },
     {
       icon: Phone,
@@ -75,7 +75,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-hero">
+    <section id="contact" className="py-24 bg-solid-hero">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
@@ -103,13 +103,13 @@ const Contact = () => {
             {contactInfo.map((info, index) => (
               <Card
                 key={info.label}
-                className="bg-card/30 backdrop-blur-glass border-border/20 hover:bg-card/50 hover:shadow-medium transition-all duration-300"
+                className="bg-card/30 backdrop-blur-glass hover:bg-card/50 shadow-soft hover:shadow-medium transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="p-6">
                   <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${info.gradient} flex items-center justify-center`}>
-                      <info.icon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 backdrop-blur-sm flex items-center justify-center shadow-medium group-hover:bg-primary/20 transition-all duration-300">
+                      <info.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-medium text-primary">{info.label}</h4>
@@ -130,16 +130,16 @@ const Contact = () => {
             ))}
 
             {/* Availability Status */}
-            <Card className="bg-gradient-accent p-6 text-white">
+            <Card className="bg-accent-blue p-6 text-accent-light shadow-medium">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+                <div className="w-3 h-3 bg-accent-light rounded-full animate-pulse" />
                 <h4 className="font-semibold">Available for Work</h4>
               </div>
-              <p className="text-sm opacity-90 mb-3">
+              <p className="text-sm mb-3">
                 Currently open to full-time opportunities, freelance projects, 
                 and consulting work.
               </p>
-              <p className="text-xs opacity-75">
+              <p className="text-xs text-accent-light/75">
                 Response time: Usually within 24 hours
               </p>
             </Card>
@@ -147,7 +147,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="bg-card/30 backdrop-blur-glass border-border/20 p-8">
+            <Card className="bg-card/30 backdrop-blur-glass shadow-strong p-8">
               <h3 className="text-2xl font-semibold text-primary mb-6">
                 Send Message
               </h3>
@@ -163,7 +163,7 @@ const Contact = () => {
                       name="name"
                       placeholder="Your full name"
                       required
-                      className="bg-card/50 border-border/50 focus:border-accent-blue transition-colors"
+                      className="bg-card/50 shadow-soft focus:shadow-medium transition-all duration-300"
                     />
                   </div>
                   <div className="space-y-2">
@@ -176,7 +176,7 @@ const Contact = () => {
                       type="email"
                       placeholder="your.email@example.com"
                       required
-                      className="bg-card/50 border-border/50 focus:border-accent-blue transition-colors"
+                      className="bg-card/50 shadow-soft focus:shadow-medium transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -212,11 +212,11 @@ const Contact = () => {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary-light text-primary-foreground shadow-medium hover:shadow-strong transition-all duration-300 disabled:opacity-50"
+                  className="w-full bg-accent-blue hover:bg-accent-blue/90 text-accent-light shadow-medium hover:shadow-strong transition-all duration-300 disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                      <div className="w-4 h-4 bg-white/10 rounded-full animate-spin mr-2 relative before:absolute before:inset-0 before:rounded-full before:border-2 before:border-transparent before:border-t-white/90" />
                       Sending...
                     </>
                   ) : (
@@ -228,7 +228,7 @@ const Contact = () => {
                 </Button>
               </form>
 
-              <div className="mt-6 pt-6 border-t border-border/20">
+              <div className="mt-6 pt-6">
                 <p className="text-sm text-muted-foreground text-center">
                   Prefer email? Send directly to{' '}
                   <a

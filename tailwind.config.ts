@@ -47,9 +47,9 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					blue: 'hsl(var(--accent-blue))',
-					purple: 'hsl(var(--accent-purple))',
-					cyan: 'hsl(var(--accent-cyan))'
+					yellow: 'hsl(var(--accent-yellow))',
+					dark: 'hsl(var(--accent-dark))',
+					light: 'hsl(var(--accent-light))'
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
@@ -67,9 +67,12 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)',
-				'gradient-accent': 'var(--gradient-accent)'
+				'solid-hero': 'var(--solid-hero)',
+				'solid-accent': 'var(--solid-accent)'
+			},
+			backgroundColor: {
+				'panel-bg': 'hsl(var(--panel-bg))',
+				'card-glass': 'hsl(var(--card-glass))'
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 bg-gradient-hero relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-20 bg-solid-hero relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent-blue/10 rounded-full blur-3xl animate-pulse" />
@@ -16,20 +16,20 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 bg-card/30 backdrop-blur-glass border border-border/20 rounded-full text-sm font-medium text-muted-foreground">
-                <span className="w-2 h-2 bg-accent-blue rounded-full mr-2 animate-pulse" />
+              <div className="inline-flex items-center px-4 py-2 bg-emerald-500/10 backdrop-blur-sm rounded-full text-sm font-medium text-emerald-400 shadow-soft">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse" />
                 Available for opportunities
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold text-primary leading-tight">
                 Jeannoel Dayne
-                <span className="block bg-gradient-accent bg-clip-text text-transparent">
+                <span className="block text-solid-accent">
                   Miguel
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground font-light">
-                Electronics Engineer
+                Electronics Engineer/IT Practitioner
               </p>
             </div>
 
@@ -51,18 +51,6 @@ const Hero = () => {
                   <ArrowRight size={18} />
                 </a>
               </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="bg-card/50 border-border/50 hover:bg-accent-blue hover:text-white hover:border-accent-blue transition-all duration-300"
-                asChild
-              >
-                <a href="/resume.pdf" target="_blank" className="flex items-center gap-2">
-                  <Download size={18} />
-                  Download CV
-                </a>
-              </Button>
             </div>
 
             {/* Social Links */}
@@ -72,14 +60,27 @@ const Hero = () => {
                 {[
                   { href: 'mailto:junnellemiguel09@gmail.com', icon: Mail, label: 'Email' },
                   { href: 'https://github.com', icon: Github, label: 'GitHub' },
-                  { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' }
+                  { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
+                  { 
+                    href: 'https://www.datacamp.com/portfolio/jeannoeldayne', 
+                    label: 'DataCamp',
+                    icon: () => (
+                      <svg 
+                        viewBox="0 0 32 32" 
+                        className="w-5 h-5"
+                        fill="currentColor"
+                      >
+                        <path d="M18.033 12.819l5.006-5.836c.136-.158.042-.397-.173-.397h-4.008c-.096 0-.187.044-.245.118L13.606 12.8a.277.277 0 0 0 0 .368l5.007 5.915c.058.074.15.118.245.118h4.008c.215 0 .309-.239.173-.397l-5.006-5.836a.139.139 0 0 1 0-.15zM8.964 12.819l5.006-5.836c.136-.158.042-.397-.173-.397H9.789a.277.277 0 0 0-.245.118l-5.007 5.915a.277.277 0 0 0 0 .368l5.007 5.915c.058.074.15.118.245.118h4.008c.215 0 .309-.239.173-.397l-5.006-5.836a.139.139 0 0 1 0-.15z" />
+                      </svg>
+                    )
+                  }
                 ].map(({ href, icon: Icon, label }) => (
                   <a
                     key={label}
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="p-3 bg-card/30 backdrop-blur-glass border border-border/20 rounded-xl hover:bg-accent-blue hover:text-white hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
+                    className="p-3 bg-primary/10 backdrop-blur-sm rounded-xl hover:bg-primary/20 text-primary shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
                     aria-label={label}
                   >
                     <Icon size={20} />
@@ -93,7 +94,7 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               {/* Main Profile Circle */}
-              <div className="w-80 h-80 md:w-96 md:h-96 bg-gradient-card backdrop-blur-glass border border-border/20 rounded-full flex items-center justify-center shadow-strong relative overflow-hidden">
+              <div className="w-80 h-80 md:w-96 md:h-96 bg-card-glass backdrop-blur-glass rounded-full flex items-center justify-center shadow-medium relative overflow-hidden">
                 {/* Shimmer Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-shimmer" 
                      style={{ 
@@ -110,15 +111,15 @@ const Hero = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent-blue/20 backdrop-blur-glass border border-accent-blue/30 rounded-2xl flex items-center justify-center rotate-12 hover:rotate-0 transition-transform duration-300">
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-panel-bg backdrop-blur-glass rounded-2xl flex items-center justify-center rotate-12 hover:rotate-0 transition-transform duration-300 shadow-soft">
                 <span className="text-2xl">⚛️</span>
               </div>
               
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-accent-purple/20 backdrop-blur-glass border border-accent-purple/30 rounded-2xl flex items-center justify-center -rotate-12 hover:rotate-0 transition-transform duration-300">
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-panel-bg backdrop-blur-glass rounded-2xl flex items-center justify-center -rotate-12 hover:rotate-0 transition-transform duration-300 shadow-soft">
                 <span className="text-3xl">🚀</span>
               </div>
               
-              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-accent-cyan/20 backdrop-blur-glass border border-accent-cyan/30 rounded-full flex items-center justify-center animate-bounce">
+              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-panel-bg backdrop-blur-glass rounded-full flex items-center justify-center animate-bounce shadow-soft">
                 <span className="text-xl">💡</span>
               </div>
             </div>
