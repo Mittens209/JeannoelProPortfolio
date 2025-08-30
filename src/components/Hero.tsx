@@ -59,8 +59,8 @@ const Hero = () => {
               <div className="flex gap-3">
                 {[
                   { href: 'mailto:junnellemiguel09@gmail.com', icon: Mail, label: 'Email' },
-                  { href: 'https://github.com/Mittens209', icon: Github, label: 'GitHub' },
-                  { href: 'https://www.linkedin.com/in/jeannoel-dayne-miguel-982931366/', icon: Linkedin, label: 'LinkedIn' },
+                  { href: 'https://github.com', icon: Github, label: 'GitHub' },
+                  { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
                   { 
                     href: 'https://www.datacamp.com/portfolio/jeannoeldayne', 
                     label: 'DataCamp',

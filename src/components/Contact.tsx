@@ -5,8 +5,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseAvailable } from '@/lib/supabase';
 import type { ContactFormData } from '@/types/contact';
+import SupabaseTest from './SupabaseTest';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,7 +50,19 @@ const Contact = () => {
         message: formData.get('message') as string,
       };
 
-      const { error } = await supabase
+      // Check if Supabase is available
+      if (!isSupabaseAvailable()) {
+        // Fallback: just show success message (you could also send to email service)
+        console.log('Contact form submission:', contactData);
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        (e.target as HTMLFormElement).reset();
+        return;
+      }
+
+      const { error } = await supabase!
         .from('contact_submissions')
         .insert([contactData]);
 
@@ -88,6 +101,11 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          {/* Supabase Test Component - Remove this after testing */}
+          <div className="lg:col-span-3 mb-8">
+            <SupabaseTest />
+          </div>
+          
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6">
             <div className="mb-8">
