@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,8 +54,9 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button and Theme Toggle */}
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             <Button 
               variant="outline" 
               className="bg-card/50 border-border/50 hover:bg-accent-blue hover:text-white hover:border-accent-blue transition-all duration-300"
@@ -87,13 +89,16 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Button 
-                variant="outline" 
-                className="bg-card/50 border-border/50 hover:bg-accent-blue hover:text-white hover:border-accent-blue transition-all duration-300 mt-4"
-                asChild
-              >
-                <a href="#contact" onClick={() => setIsOpen(false)}>Let's Connect</a>
-              </Button>
+              <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/20">
+                <ThemeToggle />
+                <Button 
+                  variant="outline" 
+                  className="bg-card/50 border-border/50 hover:bg-accent-blue hover:text-white hover:border-accent-blue transition-all duration-300"
+                  asChild
+                >
+                  <a href="#contact" onClick={() => setIsOpen(false)}>Let's Connect</a>
+                </Button>
+              </div>
             </div>
           </div>
         )}
