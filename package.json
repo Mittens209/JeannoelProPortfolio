@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Mittens209.github.io/JeannoelProPortfolio",
+  "homepage": "https://jeannoelportfolio.biz",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

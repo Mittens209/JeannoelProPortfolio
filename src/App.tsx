@@ -16,7 +16,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <div className="matrix-rain" />
-        <BrowserRouter basename="/JeannoelProPortfolio">
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
