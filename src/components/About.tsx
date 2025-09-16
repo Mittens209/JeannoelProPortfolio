@@ -3,9 +3,8 @@ import { Card } from '@/components/ui/card';
 
 const About = () => {
   const stats = [
-    { value: '2+', label: 'Years Experience', icon: Calendar },
     { value: '6+', label: 'Projects Completed', icon: Award },
-    { value: '3', label: 'Certifications', icon: GraduationCap },
+    { value: '3+', label: 'Certifications', icon: GraduationCap },
     { value: '1', label: 'Location', icon: MapPin }
   ];
 

@@ -1,6 +1,25 @@
 import { ExternalLink, Github, Zap, Database, Globe, BarChart3, Wrench, Monitor } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  icon: any;
+  features: string[];
+  status: string;
+  gradient?: string;
+  githubUrl?: string;
+}
 
 const Projects = () => {
   const projects = [
@@ -9,9 +28,9 @@ const Projects = () => {
       description: 'Advanced IoT-based monitoring and depuration system for giant freshwater prawn industry using Arduino, ESP32, and real-time data analytics.',
       technologies: ['Arduino', 'ESP32', 'C++', 'Blynk', 'IoT', 'Sensors'],
       icon: Zap,
-
       features: ['Real-time monitoring', 'Water quality analysis', 'Automated alerts', 'Data visualization'],
-      status: 'Completed'
+      status: 'Completed',
+      githubUrl: 'https://opac.mmsu.edu.ph/cgi-bin/koha/opac-detail.pl?biblionumber=25105&shelfbrowse_itemnumber=31637'
     },
     {
       title: 'Soccer Analytics Platform',
@@ -20,7 +39,7 @@ const Projects = () => {
       icon: BarChart3,
       gradient: 'from-accent-purple to-accent-blue',
       features: ['Player performance metrics', 'Match analysis', 'Predictive modeling', 'Interactive dashboards'],
-      status: 'Completed'
+      status: 'Completed',
     },
     {
       title: 'Electric Vehicle Analytics',
@@ -29,7 +48,7 @@ const Projects = () => {
       icon: Database,
       gradient: 'from-accent-cyan to-accent-purple',
       features: ['Charging pattern analysis', 'Usage optimization', 'Trend prediction', 'Infrastructure planning'],
-      status: 'Completed'
+      status: 'Completed',
     },
     {
       title: 'Digital Logbook System',
@@ -38,7 +57,7 @@ const Projects = () => {
       icon: Monitor,
       gradient: 'from-accent-blue to-accent-purple',
       features: ['Digital data entry', 'Automated reporting', 'Cloud synchronization', 'Mobile access'],
-      status: 'In Production'
+      status: 'Completed',
     },
     {
       title: 'Tech Portfolio Website',
@@ -47,16 +66,18 @@ const Projects = () => {
       icon: Globe,
       gradient: 'from-accent-purple to-accent-cyan',
       features: ['Responsive design', 'Glass effects', 'Smooth animations', 'SEO optimized'],
-      status: 'Live'
+      status: 'Live',
+      githubUrl: 'https://github.com/Mittens209/JeannoelProPortfolio'
     },
     {
-      title: 'Network Infrastructure Design',
-      description: 'Complete ICT infrastructure design including CCTV systems, FDAS, and Wi-Fi networks for local government implementation.',
-      technologies: ['Network Design', 'CCTV', 'Infrastructure', 'Planning'],
+      title: 'POW Cost System',
+      description: 'The POW Cost System is a structured framework I developed to accurately track, allocate, and optimize project expenses, ensuring transparency and efficiency in cost management.',
+      technologies: ['Typescript', 'Tailwind', 'Electro', 'Vite', 'React'],
       icon: Wrench,
       gradient: 'from-accent-cyan to-accent-blue',
-      features: ['Network topology', 'Security systems', 'Wi-Fi coverage', 'Documentation'],
-      status: 'Implemented'
+      features: ['Automation', 'Data', 'Spreadsheet', 'Documentation'],
+      status: 'Implemented',
+      githubUrl: 'https://github.com/Mittens209/POW_Cost_System'
     }
   ];
 
@@ -147,23 +168,93 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-6">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 bg-panel-bg shadow-soft hover:bg-accent-blue hover:text-accent-light transition-all duration-300"
-                  >
-                    <ExternalLink size={14} className="mr-2" />
-                    View Details
-                  </Button>
-                  {project.title !== 'Network Infrastructure Design' && (
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="px-3 hover:bg-accent-blue hover:text-accent-light transition-all duration-300 shadow-soft"
-                    >
-                      <Github size={16} />
-                    </Button>
-                  )}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="w-full bg-panel-bg shadow-soft hover:bg-accent-blue hover:text-accent-light transition-all duration-300"
+                      >
+                        <ExternalLink size={14} className="mr-2" />
+                        View Details
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="bg-[#1C1C1C]/95 backdrop-blur-xl border border-[#FFC300]/20 shadow-2xl">
+                      <DialogHeader>
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="w-12 h-12 rounded-xl bg-primary/10 backdrop-blur-sm flex items-center justify-center shadow-medium">
+                            <project.icon className="w-6 h-6 text-primary" />
+                          </div>
+                          <DialogTitle className="text-2xl font-semibold text-primary">
+                            {project.title}
+                          </DialogTitle>
+                        </div>
+                        <DialogDescription className="text-muted-foreground">
+                          {project.description}
+                        </DialogDescription>
+                      </DialogHeader>
+                      
+                      {/* Detailed Content */}
+                      <div className="mt-6 space-y-6">
+                        {/* Technologies Section */}
+                        <div className="space-y-3">
+                          <h4 className="font-semibold text-primary">Technologies Used</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech) => (
+                              <span
+                                key={tech}
+                                className="px-3 py-1.5 bg-white/5 text-white/90 rounded-lg text-sm font-medium border border-white/10"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Features Section */}
+                        <div className="space-y-3">
+                          <h4 className="font-semibold text-primary">Key Features</h4>
+                          <ul className="grid gap-2 text-muted-foreground">
+                            {project.features.map((feature) => (
+                              <li key={feature} className="flex items-center">
+                                <span className="w-1.5 h-1.5 bg-[#FFC300] rounded-full mr-2" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Project Status */}
+                        <div className="space-y-3">
+                          <h4 className="font-semibold text-primary">Project Status</h4>
+                          <div className="flex items-center">
+                            <span className={`px-3 py-1.5 rounded-lg text-sm font-medium ${
+                              project.status === 'Live' || project.status === 'In Production' || project.status === 'Implemented'
+                                ? 'bg-accent-blue/20 text-accent-blue'
+                                : 'bg-white/5 text-white/90'
+                            }`}>
+                              {project.status}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* GitHub Link */}
+                        {project.githubUrl && (
+                          <div className="space-y-3">
+                            <h4 className="font-semibold text-primary">Project Code</h4>
+                            <Button
+                              variant="outline"
+                              className="bg-white/5 hover:bg-accent-blue hover:text-accent-light transition-all duration-300"
+                              onClick={() => window.open(project.githubUrl, '_blank')}
+                            >
+                              <Github className="mr-2 h-4 w-4" />
+                              View Source Code
+                            </Button>
+                          </div>
+                        )}
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
             </Card>
