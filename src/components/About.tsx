@@ -24,7 +24,6 @@ const About = () => {
     {
       title: 'Electronics Engineer & Technician Licensure',
       issuer: 'Professional Regulation Commission (PRC)',
-      date: 'June 2025',
       description: 'Professional license for practicing Electronics Engineering in the Philippines. Passed both Electronics Engineer and Electronics Technician board examinations.',
       skills: ['Circuit Analysis', 'Electronics Systems', 'Communications', 'Control Systems'],
       credential: 'License No: *******',
@@ -34,7 +33,6 @@ const About = () => {
     {
       title: 'Associate Data Engineer in Snowflake',
       issuer: 'DataCamp',
-      date: 'July 2025',
       description: 'Comprehensive certification covering Snowflake architecture, data warehousing, and ETL processes. Completed hands-on projects and assessments.',
       skills: ['Data Warehousing', 'ETL', 'SQL', 'Data Modeling'],
       credential: 'Credential ID: ********',
@@ -42,9 +40,8 @@ const About = () => {
       type: 'datacamp'
     },
     {
-      title: 'Associate Data Engineer',
+      title: 'Certified Associate Data Engineer',
       issuer: 'DataCamp',
-      date: 'August 2025',
       description: 'Advanced SQL certification focusing on data manipulation, querying, and database optimization. Includes practical experience with real-world datasets.',
       skills: ['SQL', 'Database Design', 'Query Optimization', 'Data Analysis'],
       credential: 'Credential ID: ********',
@@ -53,9 +50,8 @@ const About = () => {
     }
     ,
     {
-      title: 'Associate Data Analyst',
+      title: 'Certified Associate Data Analyst',
       issuer: 'DataCamp',
-      date: 'August 2025',
       description: 'Advanced SQL certification focusing on data manipulation, querying, and database optimization. Includes practical experience with real-world datasets.',
       skills: ['SQL', 'Database Design', 'Query Optimization', 'Data Analysis'],
       credential: 'Credential ID: ********',
@@ -128,19 +124,19 @@ const About = () => {
             </Card>
 
             {/* Certifications */}
-            <Card className="bg-card/30 backdrop-blur-glass shadow-medium hover:shadow-strong transition-all duration-300 p-8">
-              <h3 className="text-2xl font-semibold text-primary mb-6">Certifications</h3>
-              <div className="grid md:grid-cols-2 gap-4">
+            <Card className="bg-card/30 backdrop-blur-glass shadow-medium hover:shadow-strong transition-all duration-300 p-4 sm:p-6 md:p-8">
+              <h3 className="text-2xl font-semibold text-primary mb-4 sm:mb-6">Certifications</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {certifications.map((cert, index) => (
                   <Dialog key={index}>
                     <DialogTrigger asChild>
-                      <Card className="bg-card-glass/60 backdrop-blur-glass p-6 hover:bg-card/50 transition-all duration-300 cursor-pointer border border-accent-yellow/20 hover:border-accent-yellow/30">
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-xl bg-primary/10 backdrop-blur-sm flex items-center justify-center shadow-medium">
+                      <Card className="bg-card-glass/60 backdrop-blur-glass p-4 sm:p-6 hover:bg-card/50 transition-all duration-300 cursor-pointer border border-accent-yellow/20 hover:border-accent-yellow/30">
+                        <div className="flex items-start gap-3 sm:gap-4">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-primary/10 backdrop-blur-sm flex items-center justify-center shadow-medium">
                             {cert.type === 'datacamp' ? (
                               <svg 
                                 viewBox="0 0 32 32" 
-                                className="w-5 h-5 text-primary"
+                                className="w-4 h-4 sm:w-5 sm:h-5 text-primary"
                                 fill="currentColor"
                               >
                                 <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm-3.9 21.2c-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.4l-4.6-4.6c-.3-.3-.4-.7-.4-1.1 0-.4.1-.8.4-1.1l5.7-5.7c.3-.3.7-.4 1.1-.4.4 0 .8.1 1.1.4l1.5 1.5c.6.6.6 1.5 0 2.1l-3.7 3.7 2.2 2.2c.3.3.4.7.4 1.1 0 .4-.1.8-.4 1.1zm11.6-5.7c0 .4-.1.8-.4 1.1l-5.7 5.7c-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.4l-1.5-1.5c-.6-.6-.6-1.5 0-2.1l3.7-3.7-2.2-2.2c-.6-.6-.6-1.5 0-2.1l1.5-1.5c.3-.3.7-.4 1.1-.4.4 0 .8.1 1.1.4l4.6 4.6c.3.3.4.7.4 1.1z" />
@@ -150,25 +146,25 @@ const About = () => {
                             )}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <h4 className="text-primary font-medium truncate">{cert.title}</h4>
-                            <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                            <p className="text-xs text-muted-foreground mt-2">{cert.date}</p>
+                            <h4 className="text-primary font-medium truncate text-sm sm:text-base">{cert.title}</h4>
+                            <p className="text-xs sm:text-sm text-muted-foreground">{cert.issuer}</p>
+                            <p className="text-xs text-muted-foreground mt-1 sm:mt-2">{cert.date}</p>
                           </div>
-                          <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
-                            <ExternalLink className="h-4 w-4" />
+                          <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary hidden sm:flex">
+                            <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                         </div>
                       </Card>
                     </DialogTrigger>
                     
-                    <DialogContent className="bg-[#1C1C1C]/95 backdrop-blur-xl border border-[#FFC300]/20 shadow-2xl">
+                    <DialogContent className="bg-[#1C1C1C]/95 backdrop-blur-xl border border-[#FFC300]/20 shadow-2xl p-4 sm:p-6">
                       <DialogHeader>
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 rounded-xl bg-primary/10 backdrop-blur-sm flex items-center justify-center shadow-medium">
+                        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 backdrop-blur-sm flex items-center justify-center shadow-medium">
                             {cert.type === 'datacamp' ? (
                               <svg 
                                 viewBox="0 0 32 32" 
-                                className="w-6 h-6 text-primary"
+                                className="w-5 h-5 sm:w-6 sm:h-6 text-primary"
                                 fill="currentColor"
                               >
                                 <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm-3.9 21.2c-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.4l-4.6-4.6c-.3-.3-.4-.7-.4-1.1 0-.4.1-.8.4-1.1l5.7-5.7c.3-.3.7-.4 1.1-.4.4 0 .8.1 1.1.4l1.5 1.5c.6.6.6 1.5 0 2.1l-3.7 3.7 2.2 2.2c.3.3.4.7.4 1.1 0 .4-.1.8-.4 1.1zm11.6-5.7c0 .4-.1.8-.4 1.1l-5.7 5.7c-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.4l-1.5-1.5c-.6-.6-.6-1.5 0-2.1l3.7-3.7-2.2-2.2c-.6-.6-.6-1.5 0-2.1l1.5-1.5c.3-.3.7-.4 1.1-.4.4 0 .8.1 1.1.4l4.6 4.6c.3.3.4.7.4 1.1z" />
@@ -178,31 +174,31 @@ const About = () => {
                             )}
                           </div>
                           <div>
-                            <DialogTitle className="text-xl font-semibold text-primary">
+                            <DialogTitle className="text-lg sm:text-xl font-semibold text-primary">
                               {cert.title}
                             </DialogTitle>
-                            <DialogDescription>
+                            <DialogDescription className="text-sm sm:text-base">
                               {cert.issuer} • {cert.date}
                             </DialogDescription>
                           </div>
                         </div>
                       </DialogHeader>
                       
-                      <div className="mt-6 space-y-6">
+                      <div className="mt-4 sm:mt-6 space-y-4 sm:space-y-6">
                         {/* Description */}
                         <div className="space-y-2">
-                          <h4 className="font-semibold text-primary">Description</h4>
-                          <p className="text-muted-foreground">{cert.description}</p>
+                          <h4 className="font-semibold text-primary text-sm sm:text-base">Description</h4>
+                          <p className="text-muted-foreground text-sm sm:text-base">{cert.description}</p>
                         </div>
 
                         {/* Skills */}
-                        <div className="space-y-3">
-                          <h4 className="font-semibold text-primary">Skills Covered</h4>
-                          <div className="flex flex-wrap gap-2">
+                        <div className="space-y-2 sm:space-y-3">
+                          <h4 className="font-semibold text-primary text-sm sm:text-base">Skills Covered</h4>
+                          <div className="flex flex-wrap gap-1.5 sm:gap-2">
                             {cert.skills.map((skill, i) => (
                               <span
                                 key={i}
-                                className="px-3 py-1 bg-white/5 text-white/90 rounded-lg text-sm border border-white/10"
+                                className="px-2 sm:px-3 py-1 bg-white/5 text-white/90 rounded-lg text-xs sm:text-sm border border-white/10"
                               >
                                 {skill}
                               </span>
@@ -212,18 +208,18 @@ const About = () => {
 
                         {/* Credential ID */}
                         <div className="space-y-2">
-                          <h4 className="font-semibold text-primary">Credential</h4>
-                          <div className="flex items-center justify-between">
-                            <p className="text-muted-foreground font-mono text-sm">{cert.credential}</p>
+                          <h4 className="font-semibold text-primary text-sm sm:text-base">Credential</h4>
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <p className="text-muted-foreground font-mono text-xs sm:text-sm break-all">{cert.credential}</p>
                             {cert.credentialUrl && (
                               <Button
                                 variant="outline"
                                 size="sm"
-                                className="ml-4"
+                                className="w-full sm:w-auto sm:ml-4"
                                 onClick={() => window.open(cert.credentialUrl, '_blank')}
                               >
-                                <ExternalLink className="w-4 h-4 mr-2" />
-                                Verify Credential
+                                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+                                <span className="text-xs sm:text-sm">Verify Credential</span>
                               </Button>
                             )}
                           </div>

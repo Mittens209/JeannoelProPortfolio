@@ -248,7 +248,7 @@ const Projects = () => {
                               onClick={() => window.open(project.githubUrl, '_blank')}
                             >
                               <Github className="mr-2 h-4 w-4" />
-                              View Source Code
+                              View Project
                             </Button>
                           </div>
                         )}
