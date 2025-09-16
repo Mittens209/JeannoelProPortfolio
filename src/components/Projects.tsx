@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Zap, Database, Globe, BarChart3, Wrench, Monitor } from 'lucide-react';
+import { ExternalLink, Zap, Database, Globe, BarChart3, Wrench, Monitor } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import {
@@ -240,14 +240,12 @@ const Projects = () => {
 
                         {/* GitHub Link */}
                         {project.githubUrl && (
-                          <div className="space-y-3">
-                            <h4 className="font-semibold text-primary">Project Code</h4>
+                          <div className="flex justify-center pt-2">
                             <Button
                               variant="outline"
-                              className="bg-white/5 hover:bg-accent-blue hover:text-accent-light transition-all duration-300"
+                              className="bg-white/5 hover:bg-accent-yellow/20 hover:text-accent-yellow border-accent-yellow/20 hover:border-accent-yellow/40 transition-all duration-300"
                               onClick={() => window.open(project.githubUrl, '_blank')}
                             >
-                              <Github className="mr-2 h-4 w-4" />
                               View Project
                             </Button>
                           </div>
