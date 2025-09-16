@@ -77,7 +77,7 @@ const Hero = () => {
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground font-light">
-                Electronics Engineer/IT Practitioner
+                Electronics Engineer | Tech Enthusiast | Freelancer
               </p>
             </div>
 

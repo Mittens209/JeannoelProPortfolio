@@ -4,6 +4,7 @@ import pythonLogo from '@/assets/python-logo.png';
 import nodejsLogo from '@/assets/nodejs-logo.png';
 import tailwindLogo from '@/assets/tailwind-logo.png';
 import postgresqlLogo from '@/assets/postgresql-logo.png';
+import cppLogo from '@/assets/cpp-logo.png'
 
 const TechStack = () => {
   const technologies = [
@@ -26,12 +27,6 @@ const TechStack = () => {
       category: 'Language'
     },
     {
-      name: 'Node.js',
-      logo: nodejsLogo,
-      description: 'Runtime Environment',
-      category: 'Backend'
-    },
-    {
       name: 'Tailwind CSS',
       logo: tailwindLogo,
       description: 'Styling Framework',
@@ -42,6 +37,13 @@ const TechStack = () => {
       logo: postgresqlLogo,
       description: 'Database',
       category: 'Database'
+    }
+    ,
+    {
+      name: 'C++',
+      logo: cppLogo,
+      description: 'Systems',
+      category: 'Language'
     }
   ];
 
