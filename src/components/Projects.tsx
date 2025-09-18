@@ -42,13 +42,14 @@ const Projects = () => {
       status: 'Completed',
     },
     {
-      title: 'Electric Vehicle Analytics',
-      description: 'Data engineering project analyzing EV charging patterns and usage trends to optimize charging infrastructure and user experience.',
-      technologies: ['SQL', 'Python', 'Data Engineering', 'Analytics'],
-      icon: Database,
+      title: 'OBO Online Portal',
+      description: 'Web-based platform that streamlines building permit applications and tracking through a secure and accessible online system.',
+      technologies: ['HTML', 'CSS', 'Javascript', 'UI/UX'],
+      icon: Globe,
       gradient: 'from-accent-cyan to-accent-purple',
-      features: ['Charging pattern analysis', 'Usage optimization', 'Trend prediction', 'Infrastructure planning'],
+      features: ['Client side checking', 'Status Checker', 'Information Board', 'Custumer Service'],
       status: 'Completed',
+      githubUrl: 'https://docs.google.com/document/d/1RCtB0jgyTHAonylGcQpn961aol4k4zXOhF8JwIiR-fs/edit?usp=sharing'
     },
     {
       title: 'Digital Logbook System',
@@ -58,6 +59,7 @@ const Projects = () => {
       gradient: 'from-accent-blue to-accent-purple',
       features: ['Digital data entry', 'Automated reporting', 'Cloud synchronization', 'Mobile access'],
       status: 'Completed',
+      githubUrl: 'https://docs.google.com/document/d/1gY49Myp7eG1UDzxp1JtMVKP57w5lnIzw2lNXm6ZsLLU/edit?usp=sharing'
     },
     {
       title: 'Tech Portfolio Website',

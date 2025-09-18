@@ -54,7 +54,7 @@ const TechStack = () => {
     },
     {
       title: 'Tools & Platforms',
-      skills: ['Git', 'PostgreSQL', 'MatLab', 'Snowflake', 'Cisco']
+      skills: ['Github', 'PostgreSQL', 'MatLab', 'Snowflake', 'Cisco']
     },
     {
       title: 'Specializations',
